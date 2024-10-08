@@ -2,7 +2,7 @@
 const MyHistoryCard = () => {
   return (
     <div>
-      
+      Helo
     </div>
   )
 }

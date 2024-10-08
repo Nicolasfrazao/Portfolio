@@ -13,9 +13,18 @@ module.exports = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+      backgroundImage: {
+        'background1': "url('/public/background (1).jpg')",
+        "background5": "url('/public/background(5).jpg')",
+        "background2": "url('/public/background (2).jpg')",
+        "background3": "url('/public/background (3).jpg')",
+        "background4": "url('/public/background(4).jpg')",
+      },
+      colors: {
+        'primary': '#1E1E1E',
+      }
     },
   },
-  darkMode: "class",
   darkMode: "class",
  plugins: [nextui()],
 }

@@ -26,8 +26,11 @@ import {
   Logo,
   TelegramIcon,
 } from "@/components/icons";
+import { useState } from "react";
 
 export const Navbar = () => {
+
+  const [sentMessage, setSentMessage] = useState(false)
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
