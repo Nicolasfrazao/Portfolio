@@ -6,9 +6,9 @@ export default function Home() {
       <div>
         <AboutMe />
       </div>
-      <div>
+      {/*<div>
         <MyHistory />
-      </div>
+      </div>*/}
       <div>
         <WhyHireMe />
       </div>

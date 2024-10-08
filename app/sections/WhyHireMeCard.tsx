@@ -1,8 +1,21 @@
+import { Card, CardHeader, CardBody,CardProps } from "@nextui-org/card";
+import { Divider } from "@nextui-org/react";
 
 const WhyHireMeCard = () => {
   return (
-    <div>WhyHireMeCard</div>
-  )
-}
+    <div>
+      <Card>
+        <CardHeader>
+          <h1>Why Hire Me?</h1>
 
-export default WhyHireMeCard
+        </CardHeader>
+        <Divider />
+        <CardBody>
+          <p></p>
+        </CardBody>
+      </Card>
+    </div>
+  );
+};
+
+export default WhyHireMeCard;
