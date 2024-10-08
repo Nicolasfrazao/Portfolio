@@ -3,14 +3,13 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
+import { Footer } from "./sections";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import { Footer } from "./sections";
 
-import BackgroundImg from "@/public/background (1).jpg"
-
+import Background from "@/public/background(1).jpg"; // Ensure you have the correct path here
 
 export const metadata: Metadata = {
   title: {
@@ -36,22 +35,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html 
-      suppressHydrationWarning lang="en"
-    >
+    <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable, "bg-[url(BackgroundImg)] bg-cover bg-center bg-no-repeat)]",
+          "min-h-screen font-sans antialiased",
+          fontSans.variable,
+          "bg-cover bg-center bg-no-repeat"
         )}
-      >
-        <Providers themeProps={{ 
-          attribute: "class", 
-          defaultTheme: "dark", 
-          children, 
-          enableSystem: true
-          }}>
+        >
+        <Providers
+          themeProps={{
+            attribute: "class",
+            defaultTheme: "dark",
+            children,
+            enableSystem: true,
+          }}
+        >
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">

@@ -1,7 +1,9 @@
 
 const MyHistoryCard = () => {
   return (
-    <div>MyHistoryCard</div>
+    <div>
+      
+    </div>
   )
 }
 
