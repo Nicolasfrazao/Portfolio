@@ -278,3 +278,53 @@ export const certifications = {
     "USMx, UMD: Creating Innovative Business Models",
   ],
 };
+
+export const skills = {
+  programming: [
+    "JavaScript",
+    "Python",
+    "Java",
+    "C++",
+    "C#",
+    "TypeScript",
+    "SQL",
+  ],
+  webDevelopment: [
+    "React",
+    "Next.js",
+    "Node.js",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Bootstrap",
+  ],
+  devOps: [
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Azure",
+    "Git",
+    "CI/CD",
+  ],
+  machineLearning: [
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Pandas",
+    "NumPy",
+    "Data Visualization",
+  ],
+  blockchain: [
+    "Ethereum",
+    "Solidity",
+    "Smart Contracts",
+    "Web3.js",
+    "Cryptography",
+  ],
+  business: [
+    "Project Management",
+    "Business Strategy",
+    "Data Analysis",
+    "Financial Modeling",
+  ],
+};
