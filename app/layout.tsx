@@ -9,8 +9,6 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 
-import Background from "@/public/background(1).jpg"; // Ensure you have the correct path here
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -35,15 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" className="dark:bg-gray-900">
       <head />
       <body
         className={clsx(
-          "min-h-screen font-sans antialiased",
+          "min-h-screen font-sans antialiased bg-cover bg-center bg-no-repeat",
           fontSans.variable,
-          "bg-cover bg-center bg-no-repeat"
+          "bg-[url('/background1.jpg')] dark:bg-[url('/background-dark.jpg')]",
         )}
-        >
+      >
         <Providers
           themeProps={{
             attribute: "class",
@@ -54,8 +52,8 @@ export default function RootLayout({
         >
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow ">
-              {children} 
+            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              {children}
             </main>
             <Footer />
           </div>

@@ -18,6 +18,7 @@ import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { Divider } from '@nextui-org/react';
 import {
   LinkedInIcon,
   GithubIcon,
@@ -25,12 +26,21 @@ import {
   Logo,
   TelegramIcon,
 } from "@/components/icons";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [sentMessage, setSentMessage] = useState("notSent");
+  const [location, setLocation] = useState("");
+  const [name, setName] = useState("");
+
+  const pathLocation = usePathname();
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar
+      className={`sticky top-4 z-50 container mx-auto columns-2 shadow-2xl shadow-black rounded-xl`}
+      maxWidth="xl"
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -79,23 +89,28 @@ export const Navbar = () => {
         <NavbarItem className="hidden md:flex">
           <Button
             as={Link}
-            className={`text-sm font-normal text-default-600 bg-default-100 ${sentMessage === "sent" ? "bg-blue-800 text-white" : ""}`}
+            className={`text-sm font-normal text-default-600 bg-default-100 hover:bg-green-700 hover:text-medium  ${sentMessage === "sent" ? "bg-blue-800 text-white" : ""}`}
             href=" https://t.me/mrnmfz"
             isExternal={true}
             startContent={
               <TelegramIcon
                 className={
-                  sentMessage === "sent" ? "text-green-500" : "text-red-600"
+                  sentMessage === "sent" ? "text-green-500 " : "text-red-600"
                 }
               />
             }
             variant="flat"
-            onClick={() => setSentMessage("sent")}
+            onClick={() => {
+              setSentMessage("sent"),
+                setTimeout(() => {
+                  setSentMessage("notSent");
+                }, 40000);
+            }}
           >
             {sentMessage === "sent" ? (
               <p>Message Sent!</p>
             ) : (
-              <p>Get in Touch</p>
+              <p>Message me</p>
             )}
           </Button>
         </NavbarItem>
@@ -130,6 +145,15 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
+      <div
+        className={`bottom-0 left-1/2 translate-x-[-50%] absolute w-0 h-0 dark:bg-gradient-to-r from-slate-900/20 to-gray-700/20`}
+      >
+        {pathLocation === "/" ? (
+          <div className="w-0 h-0 bg-transparent opacity-0">Test</div>
+        ) : (
+          <div className="w-0 h-0 bg-gradient-to-r from-slate-900/20 to-gray-700/20"></div>
+        )}
+      </div>
     </NextUINavbar>
   );
 };
