@@ -5,6 +5,7 @@ import {
   Skills,
   Contact,
   Projects,
+  Interests
 } from "./sections";
 
 export default function Home() {
@@ -28,6 +29,9 @@ export default function Home() {
       </div>
       <div>
         <Projects />
+      </div>
+      <div>
+        <Interests />
       </div>
       <div>
         <Contact />

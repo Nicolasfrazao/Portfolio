@@ -15,7 +15,7 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { useState } from "react";
-//import { usePathname } from "next/navigation";
+import { usePathname, } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -29,10 +29,6 @@ import {
 
 export const Navbar = () => {
   const [sentMessage, setSentMessage] = useState("notSent");
-  const [location, setLocation] = useState("");
-  const [name, setName] = useState("");
-
-  //const pathLocation = usePathname();
 
   return (
     <NextUINavbar
@@ -94,7 +90,7 @@ export const Navbar = () => {
             startContent={
               <TelegramIcon
                 className={
-                  sentMessage === "sent" ? "text-green-500 " : "text-red-600"
+                  sentMessage === "sent" ? "text-green-500  " : "text-red-600" 
                 }
               />
             }
@@ -106,7 +102,7 @@ export const Navbar = () => {
                 }, 40000);
             }}
           >
-            {sentMessage === "sent" ? <p>Message Sent!</p> : <p>Message me</p>}
+            {sentMessage === "sent" ? <p>Message Sent! ✔️</p> : <p>Message me</p>}
           </Button>
         </NavbarItem>
       </NavbarContent>

@@ -3,38 +3,47 @@ import {
   DiscordIcon,
   GithubIcon,
   LinkedInIcon,
+  InstagramIcon,
+  PatreonIcon,
+  WhatsappIcon,
+  EmailIcon,
 } from "./../../components/icons";
 
 export const socialMedia = [
   {
     name: "Instagram",
-    link: "XXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    icon: "mdi:twitter",
+    link: "https://www.instagram.com/mr.nicolasfrazao/",
+    icon: InstagramIcon,
   },
   {
     name: "Github",
-    link: "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    link: "https://github.com/nicolasfrazao",
     icon: GithubIcon,
   },
   {
+    name: "Patreon",
+    link: "https://patreon.com/NFDev",
+    icon: PatreonIcon,
+  },
+  {
     name: "Discord",
-    link: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    link: "https://discord.gg/rtkH6d22",
     icon: DiscordIcon,
   },
   {
     name: "Telegram",
-    link: "XXXXXXXXXXXXXXXXXXXXX",
+    link: "https://t.me/mrnmfz",
     icon: TelegramIcon,
   },
   {
     name: "Linkedin",
-    link: "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    link: "https://www.linkedin.com/in/nicolasfrazao/",
     icon: LinkedInIcon,
   },
   {
     name: "Whatsapp",
-    link: "XXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-    icon: "mdi:youtube",
+    link: "+55996912133",
+    icon: WhatsappIcon,
   },
 ];
 

@@ -15,15 +15,11 @@ const WhyHireMeCard = () => {
           dark:bg-slate-700 dark:text-white dark:shadow-white bg-white text-gray-800 shadow-lg rounded-xl border shadow-black `}
     >
       <CardHeader>
-        <h1
-          className={`text-3xl font-bold mb-4 text-blue-500 dark:text-white`}
-        >
+        <h1 className={`text-3xl font-bold mb-4 text-blue-500 dark:text-white`}>
           Why Hire Me?
         </h1>
       </CardHeader>
-      <Divider
-        className={`bg-blue-500 h-1 w-full rounded-2xl`}
-      />
+      <Divider className={`bg-blue-500 h-1 w-full rounded-2xl`} />
       <CardBody>
         <p className="mb-6">
           &ensp;When you hire me, you&apos;re not just bringing a highly skilled

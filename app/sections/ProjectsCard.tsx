@@ -1,13 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-import { Card, CardHeader, CardBody } from "@nextui-org/card";
+interface GitHubProject {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  avatar_url: string;
+  language: string | null;
+  homepage: string | null;
+  topics: string[];
+}
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<GitHubProject[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const token = process.env.GITHUB_ACCESS_TOKEN;
 
   // Fetch data on component mount
@@ -28,7 +37,6 @@ const Projects = () => {
 
         setProjects(data);
       } catch (error) {
-        setError(error);
         console.error("Error getting the projects:", error);
       } finally {
         setLoading(false);
@@ -36,20 +44,20 @@ const Projects = () => {
     };
 
     fetchProjects(); // Call the async function
-  }, [token]); // Added token to the dependency array for potential changes
+  }, [token]);
 
   if (loading) {
-    return <div>Loading projects...</div>;
-  }
-
-  if (error) {
-    return <div>Error loading projects: {error.message}</div>;
+    return (
+      <div className="text-center py-10 text-lg font-medium">
+        Loading projects...
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div className="container mx-auto p-4 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {projects.length === 0 ? (
-        <p>No projects found.</p>
+        <p className="text-center text-gray-500">No projects found.</p>
       ) : (
         projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
@@ -59,21 +67,51 @@ const Projects = () => {
   );
 };
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project }: { project: GitHubProject }) => {
   return (
-    <div className="mb-4 p-4 border rounded shadow">
-      <h3 className="text-lg font-semibold">{project.name}</h3>
-      <p className="text-gray-700">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+      <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+        {project.name}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-300 mb-4">
         {project.description || "No description available."}
       </p>
-      <a
-        className="text-blue-500 hover:underline"
-        href={project.html_url}
-        rel="noopener noreferrer"
-        target="_blank"
+      <div className="mb-4 flex flex-wrap items-center gap-2 text-sm">
+        <p className="text-gray-600 dark:text-gray-400 font-medium">Topics:</p>
+        {project.topics.length > 0 ? (
+          project.topics.map((topic, index) => (
+            <span
+              key={index}
+              className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full px-3 py-1 text-xs font-semibold"
+            >
+              {topic}
+            </span>
+          ))
+        ) : (
+          <span className="text-gray-500">None</span>
+        )}
+      </div>
+      <p className="text-gray-600 dark:text-gray-400 font-medium">Language:</p>
+      <p className="text-blue-600 dark:text-blue-400 mb-2">
+        {project.language || "Not specified"}
+      </p>
+      <p className="text-gray-600 dark:text-gray-400 font-medium">Homepage:</p>
+      <Link
+        className="text-blue-600 dark:text-blue-400 hover:underline mb-4"
+        href={project.homepage || "#"}
       >
-        View on GitHub
-      </a>
+        {project.homepage || "Not specified"}
+      </Link>
+      <div className="mt-4">
+        <Link
+          className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-200 font-semibold"
+          href={project.html_url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          View on GitHub
+        </Link>
+      </div>
     </div>
   );
 };

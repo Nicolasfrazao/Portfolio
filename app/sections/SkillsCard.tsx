@@ -5,7 +5,7 @@ import { skills } from "../lib/data";
 
 const SkillsCard = () => {
   return (
-    <Card className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg shadow-black dark:shadow-white">
+    <Card className="p-6 lg:top-0 lg:max-h-fit border-white border bg-white dark:bg-gray-800 rounded-lg shadow-lg shadow-black dark:shadow-white">
       <CardHeader>
         <h2 className="text-2xl font-bold mb-4">My Skills:</h2>
       </CardHeader>
@@ -25,11 +25,10 @@ const SkillsCard = () => {
 
 const SkillCategory = ({ category, skillList }) => {
   return (
-    <Card className="mb-4 bg-opacity-30 relative">
+    <div className="mb-4 relative">
       <CardHeader>
         <h3 className="text-xl font-semibold mb-2 capitalize ">
           {formatCategoryName(category) + ":"}
-          <Divider className="" />
         </h3>
       </CardHeader>
       <ul className="list-disc list-inside space-y-1">
@@ -39,7 +38,7 @@ const SkillCategory = ({ category, skillList }) => {
           </li>
         ))}
       </ul>
-    </Card>
+    </div>
   );
 };
 

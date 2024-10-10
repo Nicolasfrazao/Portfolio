@@ -4,7 +4,7 @@ import ProfilePic from "@/public/pic (1).jpg";
 
 const AboutMeCard = () => {
   return (
-    <div className="backdrop-blur-lg max-w-7xl dark:bg-slate-700 bg-opacity-75 rounded-2xl min-h-96 p-6 mt-10 flex items-start shadow-lg shadow-black dark:shadow-white">
+    <div className="backdrop-blur-lg drop-shadow-md border border-white max-w-7xl dark:bg-slate-700 bg-opacity-75 rounded-2xl min-h-96 p-6 mt-10 flex items-start shadow-lg shadow-black dark:shadow-white">
       <div className="mr-6 flex-shrink-0">
         <Image
           alt="Profile Pic"
