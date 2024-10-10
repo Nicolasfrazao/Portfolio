@@ -44,7 +44,7 @@ export const links = [
     link: "/",
   },
   {
-    name: "About",
+    name: "About me",
     link: "/about",
   },
   {
@@ -278,7 +278,6 @@ export const certifications = {
     "USMx, UMD: Creating Innovative Business Models",
   ],
 };
-
 export const skills = {
   programming: [
     "JavaScript",
@@ -288,6 +287,7 @@ export const skills = {
     "C#",
     "TypeScript",
     "SQL",
+    "NoSQL",
   ],
   webDevelopment: [
     "React",
@@ -297,6 +297,8 @@ export const skills = {
     "CSS",
     "Tailwind CSS",
     "Bootstrap",
+    "GraphQL",
+    "Express.js",
   ],
   devOps: [
     "Docker",
@@ -305,26 +307,55 @@ export const skills = {
     "Azure",
     "Git",
     "CI/CD",
+    "Jenkins",
+    "Terraform",
+    "Ansible",
   ],
   machineLearning: [
     "TensorFlow",
     "PyTorch",
-    "Scikit-learn",
-    "Pandas",
+    "OpenCV",
     "NumPy",
-    "Data Visualization",
+    "Natural Language Processing (NLP)",
   ],
   blockchain: [
     "Ethereum",
-    "Solidity",
-    "Smart Contracts",
     "Web3.js",
     "Cryptography",
+    "DeFi Protocols",
+    "Blockchain Architecture",
+  ],
+  cloudComputing: [
+    "AWS Lambda",
+    "Google Cloud Platform",
+    "Microsoft Azure",
+    "Serverless Architecture",
+    "Cloud Security",
+    "CloudFormation",
   ],
   business: [
     "Project Management",
     "Business Strategy",
     "Data Analysis",
     "Financial Modeling",
+    "Market Research",
+    "Digital Marketing",
+    "Entrepreneurship",
+  ],
+  softwareEngineering: [
+    "System Design",
+    "Design Patterns",
+    "Agile Methodologies",
+    "Software Testing",
+    "Version Control",
+    "Microservices Architecture",
+  ],
+  electronicsAndEngineering: [
+    "Embedded Systems",
+    "Digital Circuit Design",
+    "Microcontrollers",
+    "Power Electronics",
+    "Control Systems",
+    "Signal Processing",
   ],
 };

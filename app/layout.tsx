@@ -33,13 +33,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className="dark:bg-gray-900">
+    <html suppressHydrationWarning lang="en" className="scroll-smooth">
       <head />
       <body
         className={clsx(
           "min-h-screen font-sans antialiased bg-cover bg-center bg-no-repeat",
           fontSans.variable,
-          "bg-[url('/background1.jpg')] dark:bg-[url('/background-dark.jpg')]",
+          "",
         )}
       >
         <Providers
@@ -48,6 +48,7 @@ export default function RootLayout({
             defaultTheme: "dark",
             children,
             enableSystem: true,
+            themes: ["light", "dark"],
           }}
         >
           <div className="relative flex flex-col h-screen">

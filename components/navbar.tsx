@@ -15,10 +15,10 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { useState } from "react";
+//import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { Divider } from '@nextui-org/react';
 import {
   LinkedInIcon,
   GithubIcon,
@@ -26,14 +26,13 @@ import {
   Logo,
   TelegramIcon,
 } from "@/components/icons";
-import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [sentMessage, setSentMessage] = useState("notSent");
   const [location, setLocation] = useState("");
   const [name, setName] = useState("");
 
-  const pathLocation = usePathname();
+  //const pathLocation = usePathname();
 
   return (
     <NextUINavbar
@@ -107,11 +106,7 @@ export const Navbar = () => {
                 }, 40000);
             }}
           >
-            {sentMessage === "sent" ? (
-              <p>Message Sent!</p>
-            ) : (
-              <p>Message me</p>
-            )}
+            {sentMessage === "sent" ? <p>Message Sent!</p> : <p>Message me</p>}
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -148,11 +143,13 @@ export const Navbar = () => {
       <div
         className={`bottom-0 left-1/2 translate-x-[-50%] absolute w-0 h-0 dark:bg-gradient-to-r from-slate-900/20 to-gray-700/20`}
       >
-        {pathLocation === "/" ? (
+        {/*pathLocation === "/" ? (
           <div className="w-0 h-0 bg-transparent opacity-0">Test</div>
         ) : (
-          <div className="w-0 h-0 bg-gradient-to-r from-slate-900/20 to-gray-700/20"></div>
-        )}
+          <div className="w-0 h-0 bg-gradient-to-r from-slate-900/20 to-gray-700/20">
+            Home
+          </div>
+        )*/}
       </div>
     </NextUINavbar>
   );

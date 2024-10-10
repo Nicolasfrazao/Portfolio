@@ -1,6 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+
+import { Card, CardHeader, CardBody } from "@nextui-org/card";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -13,15 +15,17 @@ const Projects = () => {
     const fetchProjects = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://api.github.com/users/NicolasFrazao/repos', {
-          
-        });
+        const response = await fetch(
+          "https://api.github.com/users/NicolasFrazao/repos",
+          {},
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
+
         setProjects(data);
       } catch (error) {
         setError(error);
@@ -59,12 +63,14 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="mb-4 p-4 border rounded shadow">
       <h3 className="text-lg font-semibold">{project.name}</h3>
-      <p className="text-gray-700">{project.description || 'No description available.'}</p>
+      <p className="text-gray-700">
+        {project.description || "No description available."}
+      </p>
       <a
-        href={project.html_url}
-        target="_blank"
-        rel="noopener noreferrer"
         className="text-blue-500 hover:underline"
+        href={project.html_url}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         View on GitHub
       </a>
