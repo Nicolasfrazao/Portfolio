@@ -438,8 +438,6 @@ export const ProgrammingLogo: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
-import React from 'react';
-
 export const WhatsappIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,

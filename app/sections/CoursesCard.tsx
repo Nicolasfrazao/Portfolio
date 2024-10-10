@@ -22,6 +22,7 @@ const CoursesCard = () => {
               </h2>
             </CardHeader>
             <ul className="list-disc list-inside space-y-1">
+              {/* @ts-ignore */}
               {certifications[category].map((course: string, index: number) => (
                 <li
                   key={index}

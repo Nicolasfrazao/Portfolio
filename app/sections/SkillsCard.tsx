@@ -15,6 +15,7 @@ const SkillsCard = () => {
           <SkillCategory
             key={category}
             category={category}
+            // @ts-ignore
             skillList={skillList}
           />
         ))}
@@ -23,11 +24,18 @@ const SkillsCard = () => {
   );
 };
 
-const SkillCategory = ({ category, skillList }) => {
+const SkillCategory = ({
+  category,
+  skillList,
+}: {
+  category: string;
+  skillList: string[];
+}) => {
   return (
     <div className="mb-4 relative">
       <CardHeader>
         <h3 className="text-xl font-semibold mb-2 capitalize ">
+          {/* @ts-ignore */}
           {formatCategoryName(category) + ":"}
         </h3>
       </CardHeader>
